@@ -1,0 +1,12 @@
+name: vscode-r
+channels:
+  - conda-forge
+  - bioconda
+  - r
+  - defaults 
+dependencies:
+  - r-base
+  - r-tidyverse
+  - pip
+  - pip:
+    - radian

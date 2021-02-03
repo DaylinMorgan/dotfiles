@@ -1,0 +1,15 @@
+name: barcode
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python
+  - pandas
+  - cutadapt
+  - starcode
+  - pear
+  - fastx_toolkit
+  - pip
+  - pip:
+    - git+https://github.com/DaylinMorgan/pycashier

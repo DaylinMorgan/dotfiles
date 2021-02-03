@@ -1,0 +1,38 @@
+name: single_cell
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-essentials
+  - r-rgl
+  - r-devtools
+  - r-gam
+  - r-rcolorbrewer
+  - r-biocmanager
+  - r-rngtools
+  - bioconductor-mast
+  - bioconductor-monocle
+  - bioconductor-complexheatmap
+  - bioconductor-slingshot
+  - python
+  - pandas
+  - numpy
+  - seaborn
+  - matplotlib
+  - altair
+  - scipy
+  - scikit-learn
+  - leidenalg
+  - goatools
+  - jupyter
+  - anndata
+  - anndata2ri
+  - fa2
+  - scanpy
+  - pip
+  - pip:
+    - rpy2
+    - MulticoreTSNE
+    - git+https://github.com/flying-sheep/anndata2ri
+    - git+https://github.com/DaylinMorgan/alshain

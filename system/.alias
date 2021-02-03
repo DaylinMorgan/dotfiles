@@ -1,0 +1,28 @@
+# system usage
+#########################################
+alias reload="source ~/.zshrc"
+alias rr="rm -rf"
+#########################################
+
+#ls type aliases 
+#########################################
+#alias ls='ls -F'
+alias ll='ls -lh --color=auto'
+alias ll="ls -lhA"
+alias left='ls -t -1'
+alias ls='ls --color=auto'
+alias lsl="ls -lhFA | less"
+#########################################
+
+# List declared aliases, functions, paths
+#########################################
+alias aliases="alias | sed 's/=.*//'"
+alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
+alias paths='echo -e ${PATH//:/\\n}'
+#########################################
+
+# programs
+#########################################
+alias code2="code-insiders"
+alias pywall="python  ~/pywall/pywall.py"
+#########################################

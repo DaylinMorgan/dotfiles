@@ -1,0 +1,49 @@
+function cl() {
+    DIR="$*";
+        # if no DIR given, go home
+        if [ $# -lt 1 ]; then
+                DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+    # use your preferred ls command
+        ls -F --color=auto
+}
+
+prepend-path() {
+  [ -d $1 ] && PATH="$1:$PATH"
+}
+
+#delete and reclone remote repo
+reclone () {
+    basename=${PWD##*/}
+    remoteurl=$(git remote get-url --push origin)
+    cd ..
+    echo $basename
+    echo $remoteurl
+    rm -rf $basename
+    git clone $remoteurl
+    cd $basename
+}
+
+# snakemake use all cores by default                                            
+sm() {                                                                          
+    if [[ "$*" == *"-j"* || "$*" == *"--jobs"* || "$*" == *"--cores"* ]]; then  
+        snakemake $@                                                            
+    else                                                                                      
+        snakemake -j all $@                                                  
+    fi                                                                          
+}   
+
+# open directory opus in current directory or specificed directory
+files() {
+    if [[ $# -eq 0 ]]; then
+        echo "opening current directory"
+        directory=$(pwd)
+
+    else
+        directory=$(wslpath -w $1)
+    fi
+
+    "/mnt/c/Program Files/GPSoftware/Directory Opus/dopus.exe" $directory
+
+}

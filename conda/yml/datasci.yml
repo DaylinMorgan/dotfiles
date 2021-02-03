@@ -1,0 +1,19 @@
+name: datasci
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python
+  - pandas
+  - numpy 
+  - scipy
+  - scikit-learn
+  - altair
+  - matplotlib
+  - seaborn
+  - requests
+  - bs4
+  - pip
+  - pip:
+    - git+https://github.com/DaylinMorgan/alshain
