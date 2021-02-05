@@ -19,13 +19,13 @@ dotfiles:
 	@for FILE in $(RUNCOMFILES); do 
 	if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then 
 		mv -v $(HOME)/$$FILE{,.bak}; fi; 
-	ln -sfv "$(DOTFILES_DIR)runcom/$$FILE" $(HOME)/$$FILE; done
+	ln -sfv $(DOTFILES_DIR)runcom/$$FILE $(HOME)/$$FILE; done
 
 
 config:
-	@mkdir -p $(XDG_CONFIG_HOME)
+	mkdir -p $(XDG_CONFIG_HOME)
 	for DIR in $$(\ls -A config); do
-		ln -sv $(XDG_CONFIG_HOME)/$$DIR
+		ln -sv $(DOTFILES_DIR)config/$$DIR $(XDG_CONFIG_HOME)/$$DIR 
 	done
 
 
