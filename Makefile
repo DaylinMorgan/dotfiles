@@ -23,7 +23,7 @@ dotfiles:
 
 
 config:
-	mkdir -p $(XDG_CONFIG_HOME)
+	@mkdir -p $(XDG_CONFIG_HOME)
 	for DIR in $$(\ls -A config); do
 		ln -sv $(DOTFILES_DIR)config/$$DIR $(XDG_CONFIG_HOME)/$$DIR 
 	done
