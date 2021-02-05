@@ -28,17 +28,12 @@ and [config](./config) (using [stow](https://www.gnu.org/software/stow/)):
 ## Prequisites
 The following packages should be installed using brew (mac) or apt (linux)
 - zsh
-- stow
 - fzf
 
 ```bash
 cd ~/.dotfiles
 make
 ```
-
-
-# add conda instructions
-
 
 ## Customize
 
@@ -55,4 +50,11 @@ Alternatively, you can have an additional, personal dotfiles repo at `~/.extra`.
 
 ## Credits
 
-Many thanks to the [dotfiles community](https://dotfiles.github.io) and Lars Kappert's dotfile (repo)[https://github.com/webpro/dotfiles]
+Many thanks to the [dotfiles community](https://dotfiles.github.io) and Lars Kappert's dotfile [repo](https://github.com/webpro/dotfiles)
+
+
+## TODO
+- add conda install instructions (fetch from curl?)
+    - add base environment yml
+- switch enhancd to fzy (add installing from source instructions)
+- add local and remote vscode extensions list
