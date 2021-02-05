@@ -20,13 +20,16 @@ This will clone or download, this repo to `~/.dotfiles` depending on the availab
 
 ```bash
 git clone https://github.com/daylinmorgan/dotfiles ~/.dotfiles
+git submodule init
+git submodule update
 ```
+You need to update the submodule for the enhancd plugin to work. 
 
 Use the [Makefile](./Makefile) to symlink [runcom](./runcom)
-and [config](./config) (using [stow](https://www.gnu.org/software/stow/)):
+and [config](./config):
 
 ## Prequisites
-The following packages should be installed using brew (mac) or apt (linux)
+The following packages should be installed using brew (mac) or apt (linux) or built from source
 - zsh
 - fzf
 
