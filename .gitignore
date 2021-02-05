@@ -1,3 +1,5 @@
 system/.custom
 
 .vscode/
+
+.oh-my-zsh/cache/
