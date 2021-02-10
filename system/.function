@@ -38,7 +38,7 @@ sm() {
 files() {
     if [[ $# -eq 0 ]]; then
         echo "opening current directory"
-        directory=$(pwd)
+        directory=$(wslpath -w $PWD)
 
     else
         directory=$(wslpath -w $1)
