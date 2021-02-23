@@ -15,4 +15,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-[ -d "$HOME/miniconda3/envs/datasci" ] && conda activate datasci
+[ -d "$HOME/miniconda3/envs/dev" ] && conda activate dev
