@@ -1,0 +1,38 @@
+name: dev
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+# Python
+  - python
+  - pip
+  - ipython
+  - jupyter
+  - yapf
+  - snakemake
+#Datasci
+  - pandas
+  - numpy 
+  - scipy
+  - scikit-learn
+  - altair
+  - vega_datasets
+  - vega
+  - vega-cli
+  - vega-lite-cli
+  - matplotlib
+  - seaborn
+#WebInteraction
+  - requests
+  - bs4
+  - oauth2client
+  - jinja2
+#Misc
+  - bibtexparser
+#Go
+  - go
+#Pip
+  - pip:
+    - git+https://github.com/DaylinMorgan/alshain
+    - ytmusicapi 
