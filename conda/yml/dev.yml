@@ -11,7 +11,7 @@ dependencies:
   - jupyter
   - yapf
   - snakemake
-#Datasci
+# Datasci
   - pandas
   - numpy 
   - scipy
@@ -23,13 +23,22 @@ dependencies:
   - vega-lite-cli
   - matplotlib
   - seaborn
-#WebInteraction
+# WebInteraction
   - requests
   - bs4
+  - lxml
+  - selenium
   - oauth2client
   - jinja2
-#Misc
+# Cli
+  - rich
+  - bullet-python
+# Misc
+  - img2pdf
   - bibtexparser
+  - pypdf2
+  - fuzzywuzzy
+  - python-pdfkit
 #Go
   - go
 #Pip
