@@ -10,7 +10,7 @@ call code --install-extension ms-vscode-remote.remote-ssh --force
 call code --install-extension ms-vscode-remote.remote-ssh-edit --force
 call code --install-extension ms-vscode-remote.remote-wsl --force
 call code --install-extension Shan.code-settings-sync --force
-call code --install-extension ritwickdey.liveserver
+call code --install-extension ritwickdey.liveserver --force
 
 :: App Styling
 call code --install-extension johnpapa.vscode-peacock --force
