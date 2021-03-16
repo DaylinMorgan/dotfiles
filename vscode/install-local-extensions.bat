@@ -4,7 +4,6 @@ ECHO off
 
 ECHO Installing VS Code Extensions...
 
-
 :: General Extensions
 call code --install-extension ms-vscode-remote.remote-ssh --force
 call code --install-extension ms-vscode-remote.remote-ssh-edit --force
@@ -16,6 +15,7 @@ call code --install-extension ritwickdey.liveserver --force
 call code --install-extension johnpapa.vscode-peacock --force
 call code --install-extension PKief.material-icon-theme --force
 call code --install-extension Thomaz.preparing --force
+call code --install-extension whizkydee.material-palenight-theme --force
 
 :: Code Help
 call code --install-extension aaron-bond.better-comments --force
