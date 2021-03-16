@@ -22,3 +22,5 @@ call code --install-extension aaron-bond.better-comments --force
 call code --install-extension CoenraadS.bracket-pair-colorizer-2 --force
 call code --install-extension streetsidesoftware.code-spell-checker --force
 call code --install-extension vsls-contrib.gistfs --force
+
+ECHO Finished Installing Local VS Code Extensions
