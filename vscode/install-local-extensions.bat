@@ -3,7 +3,7 @@ ECHO off
 :: Batch script to install common local extensions
 
 ECHO Installing VS Code Extensions
-ECHO
+ECHO.
 
 :: General Extensions
 call code --install-extension ms-vscode-remote.remote-ssh --force
@@ -24,5 +24,5 @@ call code --install-extension CoenraadS.bracket-pair-colorizer-2 --force
 call code --install-extension streetsidesoftware.code-spell-checker --force
 call code --install-extension vsls-contrib.gistfs --force
 
-ECHO
+ECHO.
 ECHO Finished Installing Local VS Code Extensions
