@@ -23,13 +23,13 @@ ZSH_DISABLE_COMPFIX=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git enhancd extract)
+plugins=(git enhancd extract zsh-syntax-highlighting)
 
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 
 # Pure Prompt Setup 
 
-fpath+=$ZSH/themes/pure
+fpath+=$ZSH/custom/themes/pure
 
 autoload -U promptinit; promptinit
 
