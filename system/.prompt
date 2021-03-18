@@ -7,7 +7,7 @@ export ZSH="$DOTFILES_DIR/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=matte-black-yellow-line-updated
+ZSH_THEME=""
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -26,3 +26,19 @@ ZSH_DISABLE_COMPFIX=true
 plugins=(git enhancd extract)
 
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
+
+# Pure Prompt Setup 
+
+fpath+=$ZSH/themes/pure
+
+autoload -U promptinit; promptinit
+
+# optionally define some options
+PURE_CMD_MAX_EXEC_TIME=10
+
+zstyle :prompt:pure:git:branch color 118
+
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
+
+prompt pure

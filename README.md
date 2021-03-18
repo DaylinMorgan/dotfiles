@@ -50,10 +50,14 @@ Alternatively, you can have an additional, personal dotfiles repo at `~/.extra`.
 
 - [Awesome Dotfiles](https://github.com/webpro/awesome-dotfiles)
 
+## Windows Terminal 
+
+Colors for windows terminal configured as described [here](https://github.com/Richienb/windows-terminal-snazzy/blob/master/INSTALL.md)
+
 
 ## Credits
 
-Many thanks to the [dotfiles community](https://dotfiles.github.io) and Lars Kappert's dotfile [repo](https://github.com/webpro/dotfiles)
+Many thanks to the [dotfiles community](https://dotfiles.github.io) and Lars Kappert's dotfile [repo](https://github.com/webpro/dotfiles) for inspiration.
 
 
 ## TODO

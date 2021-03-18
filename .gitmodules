@@ -1,3 +1,6 @@
 [submodule ".oh-my-zsh/custom/plugins/enhancd"]
 	path = .oh-my-zsh/custom/plugins/enhancd
 	url = https://github.com/b4b4r07/enhancd.git
+[submodule ".oh-my-zsh/themes/pure"]
+	path = .oh-my-zsh/themes/pure
+	url = git@github.com:sindresorhus/pure.git
