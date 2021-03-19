@@ -2,7 +2,7 @@ SHELL = /bin/bash
 DOTFILES_DIR := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 PATH := $(DOTFILES_DIR)/bin:$(PATH)
 export XDG_CONFIG_HOME = $(HOME)/.config
-export STOW_DIR := $(DOTFILES_DIR)
+# export STOW_DIR := $(DOTFILES_DIR)
 RUNCOMFILES := $(shell ls -A runcom)
 DOTFILES := $(addprefix $(HOME)/,$(RUNCOMFILES))
 
@@ -10,9 +10,7 @@ DOTFILES := $(addprefix $(HOME)/,$(RUNCOMFILES))
 
 all: linux
  
-linux: link
-
-link: dotfiles config
+linux: dotfiles config
 
 .ONESHELL:
 dotfiles:
@@ -21,7 +19,7 @@ dotfiles:
 		mv -v $(HOME)/$$FILE{,.bak}; fi; 
 	ln -sfv $(DOTFILES_DIR)runcom/$$FILE $(HOME)/$$FILE; done
 
-
+.ONESHELL:
 config:
 	@mkdir -p $(XDG_CONFIG_HOME)
 	for DIR in $$(\ls -A config); do
