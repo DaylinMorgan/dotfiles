@@ -34,7 +34,7 @@ sm() {
     fi                                                                          
 }   
 
-# open directory opus in current directory or specificed directory
+# open directory opus in current directory or specified directory
 files() {
     if [[ $# -eq 0 ]]; then
         echo "opening current directory"
@@ -46,4 +46,13 @@ files() {
 
     "/mnt/c/Program Files/GPSoftware/Directory Opus/dopus.exe" $directory
 
+}
+
+# make pdfs or svgs from vegalite json's
+mkvegapdf () {
+    vl2vg $1 | vg2pdf > $2
+}
+
+mkvegasvg () {
+    vl2vg $1 | vg2svg > $2
 }

@@ -39,6 +39,7 @@ make
 ```
 
 ## Submodules 
+
 Currently the dotfiles take advantage of git submodules to include 3 git repos. 
 
 - [Enhancd](https://github.com/b4b4r07/enhancd)
