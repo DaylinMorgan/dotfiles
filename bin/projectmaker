@@ -1,0 +1,171 @@
+#!/bin/bash
+
+# TODO: include script to make report/html system
+
+# Bash Script to Create Template Project Directory
+
+#######################################################
+function help()
+{
+   # Display Help
+	echo "Create a data science project directory with sane defaults"
+	echo 
+	echo "project directory"
+	echo "├── README.md"
+	echo "├── data"
+	echo "├── docs"
+	echo "├── figures"
+	echo "└── scripts"
+	echo "    └── _default.py"
+	echo
+   	echo 'Syntax: projectmaker -n "project name"'
+   	echo
+	echo "options:"
+   	echo "-n, --name     name of project"
+	echo "-r, --report 	 setup project to easily make htmls from .py's"
+   	echo "-h, --help     print help."
+   	echo "-v             Verbose mode."
+   	echo
+}
+function mk_dir_tree()
+{
+	mkdir $1
+	mkdir "$1/data"
+	mkdir "$1/figures"
+	mkdir "$1/scripts"
+	mkdir "$1/docs"
+}
+function mk_readme()
+{
+	todaysdate=$(date +"%Y.%m.%d")
+	readme="${1}/README.md"
+	echo "# ${2}" >> ${readme}
+	echo "date: $todaysdate" >> ${readme}
+}
+function mk_default_scripts()
+{
+default="$1/scripts/_default.py"
+cat >> ${default} <<EOF
+# %% [markdown]
+# # Project: $2
+# date:
+
+# %%
+from pathlib import Path
+
+DATADIR = Path.cwd().parent / 'data' 
+FIGDIR = Path.cwd().parent / 'figures' 
+# %%
+EOF
+}
+function mk_report_dirs()
+{
+	mkdir -p "$1/notebooks"
+	mkdir -p "$1/htmls"
+}
+function mk_snakemake()
+{
+snakefile="$1/Snakefile"
+cat >> $snakefile <<EOF
+from pathlib import Path
+import docutils.core
+
+SCRIPTS = [f.stem for f in Path('scripts').iterdir() if f.stem[0]!="_"]
+HTMLS = [Path('htmls')/f'{f}.html' for f in SCRIPTS]
+
+rule all:
+    input:
+        HTMLS,
+        'README.html'
+
+rule py2nb:
+    input: 
+        'scripts/{fname}.py'
+    output:
+        'notebooks/{fname}.ipynb'
+    shell:
+        "jupytext -o {output} {input} --execute"
+
+rule nb2html:
+    input:
+        'notebooks/{fname}.ipynb'
+    output:
+        'htmls/{fname}.html'
+    shell:
+        """
+        jupyter nbconvert --to HTML {input}
+        mv notebooks/{wildcards.fname}.html {output}
+        """ 
+
+rule rst2html:
+    input: 
+        'README.rst'
+    output:
+        'README.html'
+    shell:
+        'rst2html {input} {output}'
+EOF
+}
+######################################################
+
+while [ ! $# -eq 0 ]; do
+	case "$1" in
+		--name | -n)
+			shift;
+			project_name=$1
+			;;
+		--help | -h)
+			help
+			;;
+		--report | -r)
+			shift;
+			report=1
+			;;
+		--report_amend | -ra)
+			shift;
+			report_amend=1
+			;;
+		-v)
+			echo "verbose mode - all commands will be printed"
+			set -x
+			;;
+	esac
+	shift
+done
+
+
+
+if [ -z "$project_name" ]; then echo "Must supply a project name";exit; fi
+
+
+project_dir=${project_name,,}
+project_dir=${project_dir// /_}
+
+if [ -d $project_dir ]
+then
+	echo "ERROR!!"
+	echo "this project directory already exists"
+	exit
+fi
+
+if [ ! -z $report_amend ]
+then 
+	mk_report_dirs $project_dir
+	mk_snakemake $project_dir 
+	exit
+fi
+
+mk_dir_tree $project_dir
+
+echo "making project directory for: ${project_name}"
+echo "generating this in the directory: ${project_dir}"
+
+mk_readme $project_dir "$project_name"
+mk_default_scripts $project_dir "$project_name"
+
+if [ ! -z $report]
+then
+	mk_report_dirs $project_dir
+	mk_snakemake $project_dir 
+fi
+echo "finished"
