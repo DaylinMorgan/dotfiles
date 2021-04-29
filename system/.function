@@ -34,19 +34,19 @@ sm() {
     fi                                                                          
 }   
 
-# open directory opus in current directory or specified directory
-files() {
-    if [[ $# -eq 0 ]]; then
-        echo "opening current directory"
-        directory=$(wslpath -w $PWD)
+# open windows explorer in current directory or specified directory
+# files() {
+#     if [[ $# -eq 0 ]]; then
+#         echo "opening current directory"
+#         directory=$(wslpath -w $PWD)
 
-    else
-        directory=$(wslpath -w $1)
-    fi
+#     else
+#         directory=$(wslpath -w $1)
+#     fi
 
-    "/mnt/c/Program Files/GPSoftware/Directory Opus/dopus.exe" $directory
+#     "/mnt/c/Program Files (x86)/XYplorer/XYplorer.exe" $directory
 
-}
+# }
 
 # make pdfs or svgs from vegalite json's
 mkvegapdf () {
