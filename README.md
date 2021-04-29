@@ -70,5 +70,10 @@ Many thanks to the [dotfiles community](https://dotfiles.github.io) and Lars Kap
 
 ## TODO
 - add conda install instructions (fetch from curl?)
-    - add base environment yml
-- install all vscode extensions locally, switch all to .bat
+    - include default packages with system level benefits 
+      - pip 
+      - byplot
+      - not sure what else...
+- switch readme to RST
+- change vscode extensions to yaml -> add install instructions
+  - simple python script that can generate two files a .bat for windows and a .sh for unix
