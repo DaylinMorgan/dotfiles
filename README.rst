@@ -20,15 +20,16 @@ Installation
 
 Two options
 
-1. Install this repo with ``curl`` available:
+First Option: Install this repo with ``curl`` available:
  
 .. code-block:: bash
 
     bash -c "`curl -fsSL https://raw.githubusercontent.com/daylinmorgan/dotfiles/main/remote-install.sh`"
 
+*NOTE* this will not install submodules.
 This will clone or download, this repo to ``~/.dotfiles`` depending on the availability of ``git``, ``curl`` or ``wget``.
 
-2. Alternatively, clone manually into the desired location:
+Second Option: Alternatively, clone manually into the desired location:
 
 .. code-block:: bash
 
@@ -38,21 +39,20 @@ This will clone or download, this repo to ``~/.dotfiles`` depending on the avail
 
 You need to update the submodules for the enhancd, pure and zsh-syntax-highlighting plugins to work. 
 
-Use the `Makefile <./Makefile>`_ to symlink `runcom <./runcom>`_ and `config <./config>`_
+Use the install script to symlink the runcom files and any config files.
 
 .. code-block:: bash
-    
-    cd ~/.dotfiles
-    make
+
+    ./install.sh
 
 Submodules
 ----------
 
 Currently the dotfiles take advantage of git submodules to include 3 git repos. 
 
-    - `Enhancd <https://github.com/b4b4r07/enhancd>`_
-    - `Pure <https://github.com/sindresorhus/pure>`_
-    - `Zsh-syntax-highlighting <https://github.com/zsh-users/zsh-syntax-highlighting>`_
+- `Enhancd <https://github.com/b4b4r07/enhancd>`_
+- `Pure <https://github.com/sindresorhus/pure>`_
+- `Zsh-syntax-highlighting <https://github.com/zsh-users/zsh-syntax-highlighting>`_
 
 VS Code Extensions
 ------------------ 
