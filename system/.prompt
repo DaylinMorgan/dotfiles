@@ -15,7 +15,7 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM="$ZSH/custom"
 
-# Ignore completetion dependent directory issue
+# Ignore completion dependent directory issue
 ZSH_DISABLE_COMPFIX=true
 
 DISABLE_AUTO_UPDATE=true
