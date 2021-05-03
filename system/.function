@@ -48,6 +48,13 @@ sm() {
 
 # }
 
+function gi() { 
+
+    curl -sL "https://www.toptal.com/developers/gitignore/api/$@" ;
+    
+    }
+
+
 # make pdfs or svgs from vegalite json's
 mkvegapdf () {
     vl2vg $1 | vg2pdf > $2
