@@ -27,11 +27,11 @@ mkdir -p $CONFIG_HOME
 for DIR in $CONFIGDIRS; do
     mkdir -p $CONFIG_HOME/$DIR
     for FILE in $(ls -A config/$DIR); do
-        echo "Current file -> $FILE"
+
         if [[ -f $CONFIG_HOME/$DIR/$FILE ]] && ! [[ -h $CONFIG_HOME/$DIR/$FILE ]]; then 
 		    mv -v $CONFIG_HOME/$DIR/$FILE $CONFIG_HOME/$DIR/$FILE.bak
         fi
-        echo "renamed? -> $CONFIG_HOME/$DIR/$FILE"
+
         ln -sfv $DOTFILES_DIR/config/$DIR/$FILE $CONFIG_HOME/$DIR/$FILE
     done
 done
