@@ -10,7 +10,7 @@ alias rr="rm -rf"
 alias l='ls -lh --color=auto'
 alias ll="ls -lhA"
 alias left='ls -t -1'
-alias ls='ls --color=auto'
+# alias ls='ls --color=auto'
 alias lsl="ls -lhFA | less"
 #########################################
 
