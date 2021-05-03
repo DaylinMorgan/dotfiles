@@ -105,12 +105,12 @@ Many thanks to the `dotfiles community <https://dotfiles.github.io>`_ and Lars K
 
 TODO
 ----
+- switch makefile to a simple bash script to avoid weird GNU Make behavior...
 
 - add conda install instructions (fetch from curl?)
 
-  - include default packages with system level benefits 
+  - include default packages with system level benefits through a .condarc -> symlink it
 
     - pip 
     - byplot
     - not sure what else...
-
