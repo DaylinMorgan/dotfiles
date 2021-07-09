@@ -13,7 +13,7 @@ fi
 
 # Make utilities available
 
-PATH="$DOTFILES_DIR/bin:$PATH"
+# PATH="$DOTFILES_DIR/bin:$PATH"
 
 for DOTFILE in "$DOTFILES_DIR"/system/.{function,path,env,alias,prompt,conda,custom}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
