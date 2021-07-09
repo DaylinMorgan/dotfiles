@@ -12,7 +12,6 @@ classic: false
 blocks:
   - permission
   - user
-  - group
   - size
   - date
   - name
@@ -76,10 +75,10 @@ layout: grid
 recursion:
   # Whether to enable recursion.
   # Possible values: false, true
-  enabled: false
+  enabled: false  
   # How deep the recursion should go. This has to be a positive integer. Leave
   # it unspecified for (virtually) infinite.
-  # depth: 3
+  depth: 2
 
 # == Size ==
 # Specifies the format of the size column.

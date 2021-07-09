@@ -1,9 +1,11 @@
 [credential]
 	helper = cache
 [core]
-	editor = nano -w
+	editor = vim 
 [user]
 	name = Daylin Morgan
 	email = daylinmorgan@gmail.com
 [submodule]
 	recurse = true
+[pull]
+	rebase = false
